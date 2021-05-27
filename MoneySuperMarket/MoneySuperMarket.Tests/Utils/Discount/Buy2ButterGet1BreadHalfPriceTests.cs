@@ -26,17 +26,16 @@ namespace MoneySuperMarket.Tests.Utils.Discount
         public void ShouldApplyRuleAndReturnFalseWitnCountZero()
         {
             // Given
-            var products = new List<Product>
-            {
-                new Butter
-                {
-                    Price = 0.80,
-                    ProductType = ProductType.BUTTER
-                }
+            var products = new List<Product>{
+                    new Butter
+                    {
+                        Price = 0.80,
+                        ProductType = ProductType.BUTTER
+                    }
             };
 
             // When
-            var result = _buy2ButterGet1BreadHalfPriceRule.Apply(products);
+            var result = _buy2ButterGet1BreadHalfPriceRule.Check(products);
 
             // Then
             result.Item1.Should().BeFalse();
@@ -67,7 +66,7 @@ namespace MoneySuperMarket.Tests.Utils.Discount
             };
 
             // When
-            var result = _buy2ButterGet1BreadHalfPriceRule.Apply(products);
+            var result = _buy2ButterGet1BreadHalfPriceRule.Check(products);
 
             // Then
             result.Item1.Should().BeTrue();
@@ -103,7 +102,7 @@ namespace MoneySuperMarket.Tests.Utils.Discount
             };
 
             // When
-            var result = _buy2ButterGet1BreadHalfPriceRule.Apply(products);
+            var result = _buy2ButterGet1BreadHalfPriceRule.Check(products);
 
             // Then
             result.Item1.Should().BeTrue();

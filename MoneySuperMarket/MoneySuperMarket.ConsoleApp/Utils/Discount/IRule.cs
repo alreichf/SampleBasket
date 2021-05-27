@@ -5,6 +5,7 @@ namespace MoneySuperMarket.ConsoleApp.Utils.Discount
 {
     public interface IRule
     {
-        (bool Found, int? Count) Apply(IList<Product> products);
+        (bool Found, int? Count) Check(IList<Product> products);
+        void ApplyDiscount(ShoppingBasket shoppingBasket);
     }
 }

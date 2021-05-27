@@ -32,7 +32,7 @@ namespace MoneySuperMarket.Tests.Utils.Discount
             };
 
             // When
-            var result = _buy3MilkGet1FreeTestsRule.Apply(products);
+            var result = _buy3MilkGet1FreeTestsRule.Check(products);
 
             // Then
             result.Item1.Should().BeFalse();
@@ -68,7 +68,7 @@ namespace MoneySuperMarket.Tests.Utils.Discount
             };
 
             // When
-            var result = _buy3MilkGet1FreeTestsRule.Apply(products);
+            var result = _buy3MilkGet1FreeTestsRule.Check(products);
 
             // Then
             result.Item1.Should().BeTrue();
@@ -114,7 +114,7 @@ namespace MoneySuperMarket.Tests.Utils.Discount
             };
 
             // When
-            var result = _buy3MilkGet1FreeTestsRule.Apply(products);
+            var result = _buy3MilkGet1FreeTestsRule.Check(products);
 
             // Then
             result.Item1.Should().BeTrue();
